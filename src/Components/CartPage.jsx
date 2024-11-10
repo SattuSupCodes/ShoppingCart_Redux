@@ -31,7 +31,7 @@ import { getCartTotal, removeItem, decreaseItemQuantity, increaseItemQuantity } 
         
         return (
         
-        
+      //tired  
     <section className="h-100 gradient-custom">
       <MDBContainer className="py-5 h-100">
         <MDBRow className="justify-content-center my-4">
@@ -178,3 +178,4 @@ import { getCartTotal, removeItem, decreaseItemQuantity, increaseItemQuantity } 
     </section>
     );
     }
+    //jai mata di
