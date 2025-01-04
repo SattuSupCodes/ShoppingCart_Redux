@@ -12,30 +12,32 @@ import {
 } from "mdb-react-ui-kit";
 import { useSelector } from "react-redux";
 
-
-
 const ProductCard = () => {
-    const items = useSelector((state) => state.allCart)
-
+  const items = useSelector((state) => state.allCart.items) || []; // Directly access items array
+  console.log("Items:", items);
 
   return (
     <div className="m-2">
       <MDBContainer>
         <MDBRow className="mb-3">
-         
-            <MDBCol  size="4">
-              <MDBCard>
-                <MDBCardImage src="https://www.91-img.com/gallery_images_uploads/3/d/3df5ca6a9b470f715b085991144a5b76e70da975.JPG?tr=h-550,w-0,c-at_max" position="top" alt="..." />
-                <MDBCardBody>
-                  <MDBCardTitle></MDBCardTitle>
-                  <MDBCardText></MDBCardText>
-                  <MDBBtn >
-                    Add to Cart
-                  </MDBBtn>
-                </MDBCardBody>
-              </MDBCard>
-            </MDBCol>
-          
+          {items.length > 0 ? (
+            items.map((item) => (
+              <MDBCol key={item.id} size="4">
+                <MDBCard>
+                  <MDBCardImage src={item.img} position="top" alt={item.title} />
+                  <MDBCardBody>
+                    <MDBCardTitle>{item.title}</MDBCardTitle>
+                    <MDBCardText>${item.price}</MDBCardText>
+                    <MDBBtn>
+                      Add to Cart
+                    </MDBBtn>
+                  </MDBCardBody>
+                </MDBCard>
+              </MDBCol>
+            ))
+          ) : (
+            <p>No items available</p>
+          )}
         </MDBRow>
       </MDBContainer>
     </div>

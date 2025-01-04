@@ -1,6 +1,4 @@
-import React from 'react';
-import { MDBContainer, MDBRow, MDBCol } from 'mdb-react-ui-kit';
-const products = [
+export const products = [
   {
     id: 1,
     title: "Samsung Galaxy S7",
@@ -37,20 +35,3 @@ const products = [
     quantity: 1,
   },
 ];
-
-const ProductList = () => {
-  return (
-    <div className="product-list">
-      {products.map((product) => (
-        <div key={product.id} className="product-item">
-          <img src={product.img} alt={product.title} className="product-image" />
-          <h3>{product.title}</h3>
-          <p>Price: ${product.price}</p>
-          <p>Quantity: {product.quantity}</p>
-        </div>
-      ))}
-    </div>
-  );
-};
-
-export default ProductList;
