@@ -6,16 +6,27 @@ import './App.css'
 // kuch bohot fucked up horha rendering mai but abhi keliye rehne dete h
 import Navbar from './Components/Navbar'
 import ProductCard from './Components/Product_Card'
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import PaymentMethods from './Components/CartPage'
 function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-      <Navbar></Navbar>
+    <BrowserRouter>
+      <div>
+       <Navbar></Navbar>
+        <Routes>
+          <Route path = "/" element = {<ProductCard/>}/>
+          <Route path = "/cart" element = {<PaymentMethods/>} />
+
+          
+        </Routes>
+      </div>
+     
       <ProductCard></ProductCard>
       {/* <HomePage></HomePage> */}
-      
-    </>
+      </BrowserRouter>
+    
   )
 }
 
