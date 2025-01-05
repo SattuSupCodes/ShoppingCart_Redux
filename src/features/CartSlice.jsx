@@ -20,7 +20,7 @@ const cartSlice = createSlice({
                 state.cart.push(action.payload); //isse kya hua ki if i add same item in cart, voh same id mai increment hoga naaki ek aur object ki tarah add hoga list mai, bhuji?
             }
             console.log("adding to cart: ", action.payload)
-            
+            //i hope ye sbh process kaam aye humari site pe 
 
         }
     },
