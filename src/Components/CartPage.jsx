@@ -20,7 +20,7 @@ import {
     
     export default function PaymentMethods() {
         const  {cart, totalQuantity, totalPrice } = useSelector((state) => state.allCart);
-   
+        console.log("cart contents", cart); //debugging check wow me so smart
         return (
 
         
@@ -35,13 +35,13 @@ import {
                 </MDBTypography>
               </MDBCardHeader>
               <MDBCardBody>
-               { cart.map((data) => {
+               { cart.map((data) => ( //ek bracket ki keemat tm kya jaano , Ramesh Babu?
                  <MDBRow>
                  <MDBCol lg="3" md="12" className="mb-4 mb-lg-0">
                    <MDBRipple rippleTag="div" rippleColor="light"
                      className="bg-image rounded hover-zoom hover-overlay">
                      <img
-                       src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/12a.webp"
+                       src={data.img}
                        className="w-100" />
                      <a href="#!">
                        <div className="mask" style={{ backgroundColor: "rgba(251, 251, 251, 0.2)" , }}>
@@ -84,9 +84,9 @@ import {
                      <strong>$17.99</strong>
                    </p>
                  </MDBCol>
-               </MDBRow>
+               </MDBRow>)
 
-               })
+               )
                 
                 }
     
