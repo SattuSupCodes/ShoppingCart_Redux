@@ -10,11 +10,12 @@ import {
   MDBRow,
   MDBCol,
 } from "mdb-react-ui-kit";
-import { useSelector } from "react-redux";
-
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../features/CartSlice";
 const ProductCard = () => {
   const items = useSelector((state) => state.allCart.items) || []; // Directly access items array
   console.log("Items:", items);
+  const dispatch = useDispatch()
 
   return (
     <div className="m-2">
@@ -28,7 +29,7 @@ const ProductCard = () => {
                   <MDBCardBody>
                     <MDBCardTitle>{item.title}</MDBCardTitle>
                     <MDBCardText>${item.price}</MDBCardText>
-                    <MDBBtn>
+                    <MDBBtn onClick={ () => dispatch(addToCart(item))}>
                       Add to Cart
                     </MDBBtn>
                   </MDBCardBody>
