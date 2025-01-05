@@ -14,7 +14,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../features/CartSlice";
 const ProductCard = () => {
   const items = useSelector((state) => state.allCart.items) || []; // Directly access items array
-  console.log("Items:", items);
+  // console.log("Items:", items);
   const dispatch = useDispatch()
 
   return (
@@ -46,3 +46,4 @@ const ProductCard = () => {
 };
 
 export default ProductCard;
+// losin my shiet noww
