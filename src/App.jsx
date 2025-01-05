@@ -23,7 +23,7 @@ function App() {
         </Routes>
       </div>
      
-      <ProductCard></ProductCard>
+     
       {/* <HomePage></HomePage> */}
       </BrowserRouter>
     

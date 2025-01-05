@@ -5,9 +5,10 @@ import {
   MDBIcon,
   MDBNavbarNav,
   MDBNavbarItem,
-  MDBNavbarLink
+  MDBNavbarLink,
+  MDBBtn
 } from 'mdb-react-ui-kit';
-
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
     return (
@@ -15,14 +16,14 @@ const Navbar = () => {
         <MDBContainer fluid>
           <MDBNavbarNav className='d-flex flex-row'>
             <MDBNavbarItem className='me-3 me-lg-0'>
-              <MDBNavbarLink href='#'>
-                <MDBIcon fas icon='shopping-cart' />
-              </MDBNavbarLink>
+              
+               <Link to = "/cart"> <MDBIcon fas icon='shopping-cart' /> </Link>
+              
             </MDBNavbarItem>
             <MDBNavbarItem className='me-3 me-lg-0'>
-              <MDBNavbarLink href='#'>
+              <Link to = "/">
                 <MDBIcon fab icon='twitter' />
-              </MDBNavbarLink>
+              </Link>
             </MDBNavbarItem>
           </MDBNavbarNav>
         </MDBContainer>
