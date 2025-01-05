@@ -52,7 +52,7 @@ import {
    
                  <MDBCol lg="5" md="6" className=" mb-4 mb-lg-0">
                    <p>
-                     <strong>Blue denim shirt</strong>
+                     <strong>{data.title}</strong>
                    </p>
                    <p>Color: blue</p>
                    <p>Size: M</p>
@@ -81,7 +81,7 @@ import {
                    </div>
    
                    <p className="text-start text-md-center">
-                     <strong>$17.99</strong>
+                     <strong>{data.price}</strong>
                    </p>
                  </MDBCol>
                </MDBRow>)
