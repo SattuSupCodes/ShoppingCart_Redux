@@ -12,8 +12,15 @@ const cartSlice = createSlice({
     initialState,
     reducers: {
         addToCart : (state,action) => {
+            let find = state.cart.findIndex((item) => item.id === action.payload.id);
+            if (find>=0){
+                state.cart[find].quantity += 1;
+            }
+            else {
+                state.cart.push(action.payload); //isse kya hua ki if i add same item in cart, voh same id mai increment hoga naaki ek aur object ki tarah add hoga list mai, bhuji?
+            }
             console.log("adding to cart: ", action.payload)
-            state.cart.push(action.payload);
+            
 
         }
     },

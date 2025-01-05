@@ -62,10 +62,10 @@ import {
                      <MDBIcon fas icon="trash" />
                    </MDBTooltip>
    
-                   <MDBTooltip wrapperProps={{ size: "sm" , color: "danger" }} wrapperClass="me-1 mb-2"
+                   {/* <MDBTooltip wrapperProps={{ size: "sm" , color: "danger" }} wrapperClass="me-1 mb-2"
                      title="Move to the wish list">
                      <MDBIcon fas icon="heart" />
-                   </MDBTooltip>
+                   </MDBTooltip> */}
                  </MDBCol>
                  <MDBCol lg="4" md="6" className="mb-4 mb-lg-0">
                    <div className="d-flex mb-4" style={{ maxWidth: "300px" }}>
@@ -138,7 +138,7 @@ import {
                   <MDBListGroupItem
                     className="d-flex justify-content-between align-items-center border-0 px-0 pb-0">
                     Products
-                    <span>$53.98</span>
+                    <span>{totalPrice}</span>
                   </MDBListGroupItem>
                   <MDBListGroupItem className="d-flex justify-content-between align-items-center px-0">
                     Shipping
@@ -153,7 +153,7 @@ import {
                       </strong>
                     </div>
                     <span>
-                      <strong>$53.98</strong>
+                      <strong>{totalPrice}</strong>
                     </span>
                   </MDBListGroupItem>
                 </MDBListGroup>
