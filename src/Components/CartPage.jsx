@@ -15,7 +15,7 @@ import {
     MDBTooltip,
     MDBTypography,
     } from "mdb-react-ui-kit";
-    import React from "react";
+    import React, { useEffect } from "react";
     import { useSelector, useDispatch } from "react-redux";
 import { getCartTotal } from "../features/CartSlice";
     
@@ -23,8 +23,14 @@ import { getCartTotal } from "../features/CartSlice";
     export default function PaymentMethods() {
         const  {cart, totalQuantity, totalPrice } = useSelector((state) => state.allCart);
         console.log("cart contents", cart); //debugging check wow me so smart
-        return (
+        const dispatch = useDispatch();
 
+        useEffect(() => {
+          dispatch(getCartTotal());
+        }, [cart]) 
+        
+        return (
+        
         
     <section className="h-100 gradient-custom">
       <MDBContainer className="py-5 h-100">
@@ -33,7 +39,7 @@ import { getCartTotal } from "../features/CartSlice";
             <MDBCard className="mb-4">
               <MDBCardHeader className="py-3">
                 <MDBTypography tag="h5" className="mb-0">
-                  Cart - 2 items
+                  Cart - {totalQuantity} items
                 </MDBTypography>
               </MDBCardHeader>
               <MDBCardBody>
