@@ -16,7 +16,9 @@ import {
     MDBTypography,
     } from "mdb-react-ui-kit";
     import React from "react";
-    import { useSelector } from "react-redux";
+    import { useSelector, useDispatch } from "react-redux";
+import { getCartTotal } from "../features/CartSlice";
+    
     
     export default function PaymentMethods() {
         const  {cart, totalQuantity, totalPrice } = useSelector((state) => state.allCart);
@@ -73,7 +75,7 @@ import {
                        <MDBIcon fas icon="minus" />
                      </MDBBtn>
    
-                     <MDBInput defaultValue={1} min={0} type="number" label="Quantity" />
+                     <MDBInput defaultValue={data.quantity} min={0} type="number" label="Quantity" />
    
                      <MDBBtn className="px-3 ms-2">
                        <MDBIcon fas icon="plus" />
