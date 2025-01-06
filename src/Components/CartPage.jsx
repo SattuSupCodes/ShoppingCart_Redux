@@ -17,7 +17,7 @@ import {
     } from "mdb-react-ui-kit";
     import React, { useEffect } from "react";
     import { useSelector, useDispatch } from "react-redux";
-import { getCartTotal } from "../features/CartSlice";
+import { getCartTotal, removeItem, decreaseItemQuantity, increaseItemQuantity } from "../features/CartSlice";
     
     
     export default function PaymentMethods() {
@@ -65,10 +65,10 @@ import { getCartTotal } from "../features/CartSlice";
                    <p>Color: blue</p>
                    <p>Size: M</p>
    
-                   <MDBTooltip wrapperProps={{ size: "sm" }} wrapperClass="me-1 mb-2"
-                     title="Remove item">
+                   <MDBBtn wrapperProps={{ size: "sm" }} wrapperClass="me-1 mb-2"
+                     title="Remove item" onClick={() => dispatch(removeItem(data.id))} >
                      <MDBIcon fas icon="trash" />
-                   </MDBTooltip>
+                   </MDBBtn>
    
                    {/* <MDBTooltip wrapperProps={{ size: "sm" , color: "danger" }} wrapperClass="me-1 mb-2"
                      title="Move to the wish list">
@@ -77,13 +77,13 @@ import { getCartTotal } from "../features/CartSlice";
                  </MDBCol>
                  <MDBCol lg="4" md="6" className="mb-4 mb-lg-0">
                    <div className="d-flex mb-4" style={{ maxWidth: "300px" }}>
-                     <MDBBtn className="px-3 me-2">
+                     <MDBBtn className="px-3 me-2" onClick={() => dispatch(decreaseItemQuantity(data.id))}>
                        <MDBIcon fas icon="minus" />
                      </MDBBtn>
    
                      <MDBInput defaultValue={data.quantity} min={0} type="number" label="Quantity" />
    
-                     <MDBBtn className="px-3 ms-2">
+                     <MDBBtn className="px-3 ms-2" onClick={() => dispatch(increaseItemQuantity(data.id))}>
                        <MDBIcon fas icon="plus" />
                      </MDBBtn>
                    </div>
