@@ -27,7 +27,7 @@ const initialState = {
 const cartSlice = createSlice({
     name: 'cart',
     initialState,
-    reducers: { //reducers are like (or are) functions
+    reducers: { //reducers are like (or are) functions jo decide krta hai ki state kaise badlegi jab koi action trigger hota hai
         addToCart : (state,action) => {
             let find = state.cart.findIndex((item) => item.id === action.payload.id);
             if (find>=0){
@@ -39,7 +39,7 @@ const cartSlice = createSlice({
             saveCartToLocalStorage(state.cart)
             console.log("adding to cart: ", action.payload)
             //i hope ye sbh process kaam aye humari site pe 
-
+//reducer humesha ek nayi state bnata hai
         },
         getCartTotal: (state) => {
             let { totalQuantity, totalPrice } = state.cart.reduce(
