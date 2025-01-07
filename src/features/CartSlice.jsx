@@ -29,13 +29,13 @@ const cartSlice = createSlice({
     initialState,
     reducers: { //reducers are like (or are) functions jo decide krta hai ki state kaise badlegi jab koi action trigger hota hai
         addToCart : (state,action) => {
-            let find = state.cart.findIndex((item) => item.id === action.payload.id);
+            let find = state.cart.findIndex((item) => item.id === action.payload.id);//checking if the item (action.payload.id) already exists in the cart or not
             if (find>=0){
-                state.cart[find].quantity += 1;
+                state.cart[find].quantity += 1;//agar item hai toh quantity increment ho rhi else item pushed in cart
             }
             else {
                 state.cart.push(action.payload); //isse kya hua ki if i add same item in cart, voh same id mai increment hoga naaki ek aur object ki tarah add hoga list mai, bhuji?
-            }
+            }//action.payload here represents the item(product) that I want to add in the cart. Payload product data carry krha
             saveCartToLocalStorage(state.cart)
             console.log("adding to cart: ", action.payload)
             //i hope ye sbh process kaam aye humari site pe 
@@ -78,7 +78,7 @@ const cartSlice = createSlice({
                 state.cart = state.cart.map((item) => {
                   if (item.id === action.payload) {
                     return { ...item, quantity: item.quantity - 1 };
-                  }
+                  } //yha pe the action.payload holds the item's id. When action is triggered, action.payload will carry the id of the product whose quantity you want to reduce
                   return item;
                 });
                 saveCartToLocalStorage(state.cart)
@@ -94,3 +94,6 @@ const cartSlice = createSlice({
 export const {addToCart, getCartTotal, removeItem, increaseItemQuantity, decreaseItemQuantity} = cartSlice.actions;
    
 export default cartSlice.reducer; //ahhaa
+
+//Action.payload = voh data hoti hai jisko hum kisi action ke saath bhejte hai , taaki reducer ko pata chale ki state ko kaise update krna hai.
+//payload is the data jo kaam keliye chahiye.
