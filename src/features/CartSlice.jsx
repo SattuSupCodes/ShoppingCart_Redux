@@ -22,6 +22,7 @@ const initialState = {
     items : products,
     totalQuantity : 0, 
     totalPrice : 0,
+    userId: null, // This will store the userId after login
  }
 
 const cartSlice = createSlice({

@@ -9,6 +9,7 @@ import ProductCard from './Components/Product_Card'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import PaymentMethods from './Components/CartPage'
 
+
 function App() {
   const [count, setCount] = useState(0)
 
