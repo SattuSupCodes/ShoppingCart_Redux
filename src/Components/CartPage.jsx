@@ -44,7 +44,8 @@ import { getCartTotal, removeItem, decreaseItemQuantity, increaseItemQuantity } 
               </MDBCardHeader>
               <MDBCardBody>
                { cart.map((data) => ( //ek bracket ki keemat tm kya jaano , Ramesh Babu?
-                 <MDBRow>
+               //map() yaha pe harr item keliye loop bna rha , mtlb, harr item keliye ye format follow karega and cart pe usko represent karega
+                 <MDBRow> 
                  <MDBCol lg="3" md="12" className="mb-4 mb-lg-0">
                    <MDBRipple rippleTag="div" rippleColor="light"
                      className="bg-image rounded hover-zoom hover-overlay">

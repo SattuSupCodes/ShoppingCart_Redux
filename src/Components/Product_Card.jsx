@@ -22,7 +22,7 @@ const ProductCard = () => {
       <MDBContainer>
         <MDBRow className="mb-3">
           {items.length > 0 ? (
-            items.map((item) => (
+            items.map((item) => ( //map() yaha harr item keliye ek loop bna rha, mtlb, harr item keliye jo product data mai hai (items) uske liye ek card bna rha
               <MDBCol key={item.id} size="4">
                 <MDBCard>
                   <MDBCardImage src={item.img} position="top" alt={item.title} />

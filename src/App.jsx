@@ -8,6 +8,7 @@ import Navbar from './Components/Navbar'
 import ProductCard from './Components/Product_Card'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import PaymentMethods from './Components/CartPage'
+import Login from './Components/Login'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -16,6 +17,7 @@ function App() {
       <div>
        <Navbar></Navbar>
         <Routes>
+          <Routes path = "login" element = {<Login/>}/>
           <Route path = "/" element = {<ProductCard/>}/>
           <Route path = "/cart" element = {<PaymentMethods/>} />
 
