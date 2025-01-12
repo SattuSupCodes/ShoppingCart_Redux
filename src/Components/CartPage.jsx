@@ -29,7 +29,7 @@ import { getCartTotal, removeItem, decreaseItemQuantity, increaseItemQuantity } 
           dispatch(getCartTotal());
         }, [cart]) 
         
-        return (
+        return ( //ehehe
         
       //tired  aah
     <section className="h-100 gradient-custom">
